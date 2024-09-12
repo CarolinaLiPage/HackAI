@@ -23,17 +23,15 @@ layout:
 environment:
   base:
     registry: nvcr.io
-    image: nvidia/ai-workbench/python-basic:1.0.2
-    build_timestamp: "20231114175838"
-    name: Python Basic
+    image: nvidia/ai-workbench/python-cuda122:1.0.3
+    build_timestamp: "20231214221614"
+    name: Python with CUDA 12.2
     supported_architectures: []
-    cuda_version: ""
-    description: A Python Base with Jupyterlab
+    cuda_version: "12.2"
+    description: A Python Base with CUDA 12.2
     entrypoint_script: ""
     labels:
-    - ubuntu
-    - python3
-    - jupyterlab
+    - cuda12.2
     apps:
     - name: jupyterlab
       type: jupyterlab
@@ -58,7 +56,7 @@ environment:
     programming_languages:
     - python3
     icon_url: ""
-    image_version: 1.0.2
+    image_version: 1.0.3
     os: linux
     os_distro: ubuntu
     os_distro_release: "22.04"
@@ -90,8 +88,8 @@ execution:
   apps: []
   resources:
     gpu:
-      requested: 0
-    sharedMemoryMB: 0
+      requested: 1
+    sharedMemoryMB: 1024
   secrets: []
   mounts:
   - type: project
